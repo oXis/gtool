@@ -201,7 +201,7 @@ def main(args):
                 except IndexError:
                     print("Is this really a fasta file?")
                     return -1
-                dataList.append(data)
+                printResult(data, args.size, args.gcontent)
             else:
                 if args.extract is None:
                     data = contigSizeAndGC(seq, args.contig, args.gcontent)
@@ -209,18 +209,18 @@ def main(args):
                 else:
                     data = extractSeq(seq, args.contig, args.gcontent, args.extract[0], args.extract[1])
                     dataList.append(data)
-            for data in dataList:
-                printResult(data, args.size, args.gcontent)
+                for data in dataList:
+                    printResult(data, args.size, args.gcontent)
 
 
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("-s", "--size", help="Show size.", action="store_true", dest="size")
-    parser.add_argument("-g", "--gcontent", help="Show GC content.", action="store_true", dest="gcontent")
-    parser.add_argument("-c", "--contig", help="Specify contig to work on, supports regular expressions.", action="store", dest="contig")
-    parser.add_argument("-e", "--extract", help="Extract sequence from START to STOP, works only with -c and stops at the first match.", type=int, nargs=2, dest="extract", metavar=('start', 'stop'))
+    parser.add_argument("-s", "--size", help="show size.", action="store_true", dest="size")
+    parser.add_argument("-g", "--gcontent", help="show GC content.", action="store_true", dest="gcontent")
+    parser.add_argument("-c", "--contig", help="specify contig to work on, supports regular expressions.", action="store", dest="contig")
+    parser.add_argument("-e", "--extract", help="sxtract sequence from START to STOP, works only with -c and stops at the first match.", type=int, nargs=2, dest="extract", metavar=('start', 'stop'))
 
-    parser.add_argument('seqIn', type=str, help="Genome, list of genome or stdin (uses '-' for stdin)", nargs='+')
+    parser.add_argument('seqIn', type=str, help="genome, list of genome or stdin (uses '-' for stdin)", nargs='+')
 
     sys.exit(main(parser.parse_args()))
