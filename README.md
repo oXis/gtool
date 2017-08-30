@@ -76,5 +76,5 @@ $ ./gtool.py -c contig1 -e 10 35 B.fasta
 GTATCGGGTAGGTGACTGCGACGAGA
 ```
 
-# Supports
+# Support
 Open a issue :)
