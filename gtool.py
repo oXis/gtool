@@ -6,7 +6,7 @@ import re
 
 def printResult(data, size, gcontent):
 
-    if not size and not gcontent:
+    if not size and not gcontent and data["seq"] is not None:
         print(">" + data["contig"])
         print(data["seq"])
     else:
