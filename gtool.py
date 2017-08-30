@@ -103,6 +103,7 @@ def contigSizeAndGC(seq, contig, gcontent, stdin=False):
 
             data["contig"] = None
             data["size"] = count
+            data["seq"] = None
             if gcontent:
                 data["gcontent"] = GC
 
@@ -119,7 +120,6 @@ def contigSizeAndGC(seq, contig, gcontent, stdin=False):
         data["error"] = True
         dataList.append(data)
 
-    data["seq"] = None
     fseq.close()
     return dataList
 
