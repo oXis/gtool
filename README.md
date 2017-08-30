@@ -1,5 +1,5 @@
 # gtool
-'''
+```
 $ ./gtool.py --help
 usage: gtool.py [-h] [-s] [-g] [-c CONTIG] [-e start stop] seqIn [seqIn ...]
 
@@ -17,4 +17,4 @@ optional arguments:
                         Extract sequence from START to STOP, works only with
                         -c and stops at the first match.
 
-'''
+```
