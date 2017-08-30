@@ -76,7 +76,7 @@ $ ./gtool.py -c contig1 -e 10 35 B.fasta
 GTATCGGGTAGGTGACTGCGACGAGA
 ```
 
-###Stupidly complicated
+### Stupidly complicated
 ```
 $ blastn -subject A.fasta -query B.fasta -outfmt 6 -evalue 1e-10 -culling_limit 1 \
  | awk '{print "-c "$1" -e "$7" "$8'} \
