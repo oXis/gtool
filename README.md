@@ -1,5 +1,6 @@
 # Introduction
-When doing bioinformatics/genomics you always manipulate fasta files (at least I do) and often you need the size/GC content of your genomes as a quick check. Or after a blast you have the coordinates of a match and you want to extract the sequence for future analysis. This why I wrote this small script.
+When doing bioinformatics/genomics you always manipulate fasta files (at least I do) and often you need the size/GC content of your genomes as a quick check. Or after a blast you have the coordinates of a match and you want to extract the sequence for future analysis. This why I wrote this small script.    
+The script should be very fast, each fasta file is read only once and nothing is stored in memory (except the extracted contig).
 
 # Deps
 - Python 3
