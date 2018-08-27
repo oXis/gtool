@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import sys
 import re
@@ -170,6 +170,9 @@ def extractSeq(seq, contig, gcontent, start, stop, stdin=False):
 
 
 def main(args):
+
+    if args.contig is None and args.extract is None and args.gcontent is None and args.size is None:
+        parser.error("You should at least use one argument.\n{} --help for more info.".format(sys.argv[0]))
 
     if args.contig is None and args.extract is not None:
         parser.error("-e (--extract) requires -c (--contig).")
